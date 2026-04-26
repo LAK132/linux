@@ -64,7 +64,7 @@ impl Driver for PhyQT2025 {
         dev.write(C45::new(Mmd::PCS, 0x0028), 0xa528)?;
         dev.write(C45::new(Mmd::PCS, 0x0029), 0x0003)?;
         // Configure transmit and recovered clock.
-        dev.write(C45::new(Mmd::PMAPMD, 0xa30a), 0x06e1)?;
+        dev.write(C45::new(Mmd::PMAPMD, 0xc30a), 0x06e1)?;
         // `MICRO_RESETN`: release the micro-controller from the reset state.
         dev.write(C45::new(Mmd::PMAPMD, 0xc300), 0x0002)?;
         // The micro-controller will start running from the boot ROM.
